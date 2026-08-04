@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claude Console</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%23d97757'/><path d='M7 8h10M7 12h10M7 16h6' stroke='white' stroke-width='1.8' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div id="picker" class="view">
+  <header id="bar">
+    <div class="brand">
+      <span class="logo">C</span>
+      <div>
+        <h1>Claude Console</h1>
+        <p class="sub">Sessions on <b>jimmynas</b></p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="new-btn" class="btn primary">+ New session</button>
+      <button id="continue-btn" class="btn" title="Resume the most recent conversation in /srv/appdata">Continue last</button>
+      <button id="refresh-btn" class="btn ghost" title="Refresh" aria-label="Refresh"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 9a8.5 8.5 0 1 1-.5 4.5M4 4.5V9h4.5"/></svg></button>
+    </div>
+  </header>
+
+  <div id="cards" class="grid"></div>
+  <div id="empty" class="empty hidden">No sessions yet — start one with <b>+ New session</b>.</div>
+  <p id="err" class="err hidden"></p>
+</div>
+
+<div id="term" class="view hidden">
+  <header id="termbar">
+    <button id="back-btn" class="btn ghost">&#8592; Back</button>
+    <div class="termtitle"><span class="dot live"></span><span id="term-name">main</span></div>
+    <div class="actions">
+      <button id="term-remote" class="btn">Remote control</button>
+      <button id="term-stop" class="btn danger">Stop</button>
+    </div>
+  </header>
+  <iframe id="frame" title="Claude terminal"></iframe>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="js/app.js?v=9"></script>
+</body>
+</html>
